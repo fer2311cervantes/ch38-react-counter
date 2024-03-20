@@ -8,10 +8,11 @@ const Generation = ( props ) => {
 
 const Greeting = ( props ) => {
     return (
-      <div>
+      <>
         { /* Mi comentario */ }
         <p style= { {color:props.styleColor} }>Hola { props.name }</p>
-      </div>
+        
+      </>
     );
   };
 /* 

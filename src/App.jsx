@@ -1,27 +1,32 @@
 import './App.css'
-import Generation from './components/generation/generation'
-/*import Gene from './components/generation/generation'
-   <Gene></Gene>
-   <Gene/>*/
-import { Greeting } from './components/generation/generation'
-/*import { Greeting as Gree } from './components/generation/generation'
-   <Gree></Gree>
-   <Gree />*/
+import { Counter } from './components/counter/counter'
+import { Footer } from './components/footer/footer'
+import { PrimerosPasos } from './components/generation/primerosPasos'
+import { Navbar } from './components/navbar/navbar'
 
 
 function App() {
   //sintaxis JSX
   return (
-    <div>
-      <Generation style= { {color:"red"} }></Generation>
-      <Generation />
-      <Greeting name="Fernando" styleColor="blue"/>
-    </div>
+    <>
+      <Navbar />
+      <PrimerosPasos />
+      <Counter />
+      <Footer />
+    </>
   )
 }
 
 export default App
 
+//import Generation from './components/generation/generation'
+/*import Gene from './components/generation/generation'
+   <Gene></Gene>
+   <Gene/>*/
+//import { Greeting } from './components/generation/generation'
+/*import { Greeting as Gree } from './components/generation/generation'
+   <Gree></Gree>
+   <Gree />*/
 
 /* import { useState } from 'react'
 import reactLogo from './assets/react.svg'
