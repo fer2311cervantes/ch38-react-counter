@@ -1,9 +1,9 @@
 
 
-export const CounterButton = () => {
+export const CounterButton = ( {children, buttonHandle} ) => {
   return (
     <>
-        <button>Button</button>
+        <button onClick={ ()=> buttonHandle() } >{children}</button>
     </>
   )
 }

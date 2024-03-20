@@ -9,8 +9,9 @@ const Generation = ( props ) => {
 const Greeting = ( props ) => {
     return (
       <>
-        { /* Mi comentario */ }
-        <p style= { {color:props.styleColor} }>Hola { props.name }</p>
+        { /* Mi comentario 
+        <p style= { {color:props.styleColor} }>Hola { props.name }</p>*/ }
+        <p>Hola {props.name}</p>
         
       </>
     );
