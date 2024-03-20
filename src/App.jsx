@@ -1,17 +1,32 @@
-/* import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg' */
 import './App.css'
+import Generation from './components/generation/generation'
+/*import Gene from './components/generation/generation'
+   <Gene></Gene>
+   <Gene/>*/
+import { Greeting } from './components/generation/generation'
+/*import { Greeting as Gree } from './components/generation/generation'
+   <Gree></Gree>
+   <Gree />*/
+
 
 function App() {
   //sintaxis JSX
-  const myParagraph = <h2>
-    <a href="generation.org.mx">Generation</a>
-    </h2>;
-  return myParagraph
+  return (
+    <div>
+      <Generation style= { {color:"red"} }></Generation>
+      <Generation />
+      <Greeting name="Fernando" styleColor="blue"/>
+    </div>
+  )
 }
 
 export default App
+
+
+/* import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg' */
+
 /* function App() {
   const [count, setCount] = useState(0)
 
