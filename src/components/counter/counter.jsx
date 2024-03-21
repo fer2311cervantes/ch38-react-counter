@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { CounterButton } from "./counterButton";
+import { Box } from "@mui/material";
+import Grid from '@mui/material/Unstable_Grid2';
 
 let maxValue = true;
 export const Counter = () => {
   console.log("Soy el componente Counter y me renderizo");
-  const [ counterValue, setCounter ] = useState(10);
+  const [counterValue, setCounter] = useState(10);
   /**
    * Permite realizar efectos secundarios en componentes de función. 
    * Los efectos secundarios pueden ser operaciones asíncronas, 
@@ -13,32 +15,45 @@ export const Counter = () => {
    * [] = dependencias
    * []: vacío, solo se renderiza una sola vez
    */
-  useEffect( ()=>{
-    const mensajeEnConsola = ()=>{
-       console.log("Estoy dentro de UseEffect");
+  useEffect(() => {
+    const mensajeEnConsola = () => {
+      console.log("Estoy dentro de UseEffect");
     }
     mensajeEnConsola();
-  }, [maxValue]  );
+  }, [maxValue]);
 
-  const incrementHandle = () =>{
+  const incrementHandle = () => {
     setCounter(counterValue + 1);
-    if(counterValue >= 13) maxValue = !maxValue;
+    if (counterValue >= 13) maxValue = !maxValue;
   }
 
-  const decrementHandle = () =>{
+  const decrementHandle = () => {
     setCounter(counterValue - 1);
   }
 
-  const resetHandle = () =>{
+  const resetHandle = () => {
     setCounter(10);
   }
 
   return (
     <>
-        <h2>{counterValue}</h2>
-        <CounterButton buttonHandle = {decrementHandle} >-</CounterButton>
-        <CounterButton buttonHandle = {resetHandle} >Reset</CounterButton>
-        <CounterButton buttonHandle = {incrementHandle} >+</CounterButton>
+      <Grid container spacing={2} >
+        <Grid xs={12} md={6} lg={4}>
+          <Box
+            component="article"
+            alignItems="center"
+            gap={4}
+            p={2}
+            m={2}
+            sx={{ border: '2px solid grey' }}
+          >
+            <h2>{counterValue}</h2>
+            <CounterButton buttonHandle={decrementHandle} >-</CounterButton>
+            <CounterButton buttonHandle={resetHandle} >Reset</CounterButton>
+            <CounterButton buttonHandle={incrementHandle} >+</CounterButton>
+          </Box>
+        </Grid>
+      </Grid>
     </>
   )
 }
